@@ -1,5 +1,3 @@
-
-
 class Node {
     private value
     private next
@@ -14,7 +12,10 @@ class Node {
     get nextNode(){
         return this.next
     }
-    
+
+   public addNextNode(node:null|Node=null){
+        this.next=node
+    }
 }
 
 export default Node

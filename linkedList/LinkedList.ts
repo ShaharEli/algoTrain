@@ -1,25 +1,4 @@
-
-
-class Node {
-    private value
-    private next
-    constructor(value:any,next:Node | null=null){
-        this.value = value;
-        this.next = next ;
-    }
-    get nodeValue(){
-        return this.value;
-    }
-
-    get nextNode(){
-        return this.next
-    }
-
-   public addNextNode(node:Node){
-        this.next=node
-    }
-    
-}
+import Node from "./Node"
 
 class LinkedList{
     tail?:Node
@@ -73,16 +52,20 @@ class LinkedList{
          this.tail=reversedNodes[0]
     }
 
-    public remove(){}
+    public remove(val:any){
+        if(!this.tail)return false
+        let lastNode =this.tail
+        let curr =this.tail
+        while(lastNode.nextNode){
+            curr=lastNode
+            if(lastNode.nodeValue===val){
+                curr.addNextNode(lastNode.nextNode?.nextNode)
+                return true
+            }
+            lastNode=lastNode.nextNode
+        }
+    }
 
 }
 export default LinkedList
 
-const list  = new LinkedList("1")
-list.add("2")
-list.add("3")
-list.add("4")
-list.add("5")
-list.printList()
-list.reverse()
-list.printList()
