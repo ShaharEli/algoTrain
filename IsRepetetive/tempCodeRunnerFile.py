@@ -1,0 +1,1 @@
+curr_node_idx+1

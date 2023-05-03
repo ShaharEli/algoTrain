@@ -16,5 +16,4 @@ console.log(search(inputSample, targetSample))
 const inputSample2 = [-1, 0, 3, 5, 9, 12]
 const targetSample2 = 2
 console.log(search(inputSample2, targetSample2))
-
 export {}
